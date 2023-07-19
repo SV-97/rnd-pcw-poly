@@ -7,7 +7,7 @@ Generates random piecewise polynomial functions (for example for testing CPD-alg
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-from rnc_pcw_poly import rnd_pcw_poly
+from rnd_pcw_poly import rnd_pcw_poly
 
 # generate a piecewise polynomial function with 5 "jumps" / 6 segments;
 # no more than 200 degrees of freedom in total and locally no more than

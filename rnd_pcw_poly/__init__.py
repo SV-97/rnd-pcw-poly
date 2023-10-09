@@ -1,6 +1,6 @@
 """Generates random piecewise polynomial functions (for example for testing CPD-algorithms)."""
 from numbers import Integral
-from random_partition_py import random_partitions_seeded, random_partitions
+import random_partition_py as rpp
 from typing import Callable, Optional
 import numpy as np
 from .pcw_fn import PcwPolynomial, PcwFn
@@ -144,11 +144,8 @@ def rnd_pcw_poly(
         ```
     """
     # generate a random partition of the maximal degrees of freedom into the right number of parts
-    if dof_seed is None:
-        dofs = random_partitions(max_total_dofs, n_jumps + 1, 1)[0]
-    else:
-        dofs = random_partitions_seeded(
-            dof_seed, max_total_dofs, n_jumps + 1, 1)[0]
+    dofs = rpp.random_partitions(
+        max_total_dofs, n_jumps + 1, 1, seed=dof_seed)[0]
     # generate some random jump locations in (0, 1)
     jumps = np.sort(np.random.default_rng(
         seed=jump_seed).uniform(0+1e-12, 1-1e-12, n_jumps))

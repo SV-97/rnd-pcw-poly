@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rnd-pcw-poly"
-version = "0.1.0"
+version = "0.2.0"
 description = "Generate random piecewise polynomials"
 authors = ["Stefan Volz <volzstefan97@googlemail.com>"]
 readme = "README.md"
@@ -16,7 +16,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.10"
 numpy = "^1.24.2"
-random-partition-py = "^0.1.0"
+random-partition-py = "=0.2.0"
 matplotlib = "^3.7.1"
 
 
